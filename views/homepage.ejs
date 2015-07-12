@@ -1,0 +1,14 @@
+<div ng-controller="AppCtrl as appCtrl">
+
+     <md-progress-circular ng-hide="determinateValue === 100" md-mode="determinate" value="{{determinateValue}}" style="margin: 0 auto;"></md-progress-circular>
+  
+      <md-tabs md-border-bottom>
+        <md-tab ng-repeat="page in pages" label="{{page.name}}">
+          <md-content>
+            <p ng-bind="page.description"></p>
+            <div ng-include="" src="'/templates/page-' + page.template_id + '.html'"></div>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+
+</div>

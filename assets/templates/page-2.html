@@ -1,0 +1,18 @@
+<md-data-table-container>
+  <table md-data-table md-row-select="selected" md-progress="deferred">
+    <thead md-order="query.order" md-trigger="onorderchange">
+      <tr>
+        <th order-by="database.name">Name</th>
+        <th numeric order-by="database.tables.length">Tables</th>
+        <th order-by="database.provider">Providers</th>
+      </tr>
+    </thead>
+    <tbody md-auto-select>
+      <tr ng-repeat="database in databases | orderBy: query.order | filter: skip | limitTo: query.limit">
+        <td>{{database.name}}</td>
+        <td>{{database.tables.length}}</td>
+        <td>{{providers[database.provider].name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-data-table-container>
